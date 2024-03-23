@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}   
+    <title>Single Student Details</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-image: url('{% static "image6.jpg" %}');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        h1 {
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 80%;
+            margin-top: 20px;
+            border-collapse: collapse;
+            text-align: left;
+        }
+
+        th, td {
+            border: 2px solid #007bff;
+            padding: 10px;
+            color: #007bff;
+        }
+
+        th {
+            background-color: #007bff;
+            color: white;
+        }
+
+        td a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #220ad5;
+        }
+    </style>
+</head>
+<body>
+    <h1>Single Student Details</h1>
+
+    <table border="2">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Address</th>
+                <th>Course</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{ student.name }}</td>
+                <td>{{ student.address }}</td>
+                <td>{{ student.course }}</td>
+                <td>{{ student.email }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{% url 'all' %}"><button>Back to All Students</button></a>
+    <a href="{% url 'home' %}"><button>Home</button></a>
+</body>
+</html>
