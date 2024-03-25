@@ -4,10 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Result Page</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(120deg, #2980B9, #6DD5FA);
+        }
+
+        .wrapper {
+            width: 400px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            text-align: center;
+        }
+
+        .wrapper h1 {
+            font-size: 36px;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        .wrapper p {
+            font-size: 18px;
+            color: #555;
+        }
+
+        /* You can further customize the styles as needed */
+    </style>
 </head>
 <body>
-    <h1>Result</h1>
-    <p>Predictions: {{ predictions }}</p>
-    <!-- You can further customize the display of predictions here -->
+    <div class="wrapper">
+        <h1>Result</h1>
+        <p>Predictions: {{ predictions }}</p>
+        <!-- You can further customize the display of predictions here -->
+    </div>
 </body>
 </html>
