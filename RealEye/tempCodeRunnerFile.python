@@ -1,0 +1,9 @@
+import cv2
+
+im = cv2.imread('D:\MPDatasets\CIFAKE2\Train\REAL\0300 (2).jpg')
+
+print(type(im))
+
+
+print(im.shape)
+print(type(im.shape))

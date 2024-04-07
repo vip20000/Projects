@@ -1,3 +1,5 @@
+
+Result.html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,50 +9,76 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <style>
         @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: "Poppins", sans-serif;
         }
-
         body {
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            background: linear-gradient(120deg, #2980B9, #6DD5FA);
+            background-color: #000000; /* Dark gray background */
         }
-
         .wrapper {
             width: 400px;
-            background: rgba(255, 255, 255, 0.8);
+            background: #fff;
             border-radius: 10px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
             padding: 40px;
             text-align: center;
+            color: #050505; /* Text color matches the dark gray background */
         }
-
-        .wrapper h1 {
+        .result-heading {
             font-size: 36px;
             margin-bottom: 30px;
-            color: #333;
+            color: #000;
+            text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.3);
         }
-
-        .wrapper p {
+        .prediction-list {
+            list-style: none;
+            margin-bottom: 20px;
+            padding: 0;
+            text-align: left;
+        }
+        .prediction-item {
+            margin-bottom: 10px;
             font-size: 18px;
-            color: #555;
+            transition: all 0.3s ease-in-out; /* Smooth transition for hover effect */
         }
-
-        /* You can further customize the styles as needed */
+        .prediction-item:hover {
+            transform: scale(1.1); /* Scale up on hover */
+            color: #FF6347; /* Change text color on hover */
+        }
+        .result-image {
+            width: 200px;
+            height: auto;
+            border-radius: 10px;
+            margin: 0 auto;
+            display: block;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease-in-out; /* Smooth transition for hover effect */
+        }
+        .result-image:hover {
+            transform: scale(1.1); /* Scale up on hover */
+        }
     </style>
 </head>
 <body>
-    <div class="wrapper">
-        <h1>Result</h1>
-        <p>Predictions: {{ predictions }}</p>
-        <!-- You can further customize the display of predictions here -->
-    </div>
+    <body>
+        <div class="wrapper">
+            <h1>Result</h1>
+            <p>Prediction: 
+                {% for prediction in predictions %}
+                    {{ prediction }}
+                    {% if not forloop.last %}, {% endif %}
+                {% endfor %}
+            </p>
+            <p>The image is: {{ result }}</p>
+            <!-- You can further customize the display of the result here -->
+        </div>
+    </body>
 </body>
 </html>
